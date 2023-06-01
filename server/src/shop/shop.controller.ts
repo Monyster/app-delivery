@@ -1,9 +1,10 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { ShopService } from './shop.service';
 import { CreateShopDto } from './dto/create-shop.dto';
-import { UpdateShopDto } from './dto/update-shop.dto';
+import { ObjectId } from 'mongoose';
+import { CreateProductDto } from './dto/create-product.dto';
 
-@Controller('shop')
+@Controller('/shop')
 export class ShopController {
   constructor(private readonly shopService: ShopService) {}
 
@@ -18,17 +19,21 @@ export class ShopController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.shopService.findOne(+id);
+  findOne(@Param('id') id: ObjectId) {
+    return this.shopService.findOne(id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateShopDto: UpdateShopDto) {
-    return this.shopService.update(+id, updateShopDto);
+  @Post('/product')
+  addProduct(@Body() createProductDto: CreateProductDto) {
+    return this.shopService.addProduct(createProductDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.shopService.remove(+id);
-  }
+  // @Patch(':id')
+  // update(@Param('id') id: string, @Body() updateShopDto: UpdateShopDto) {
+  //   return this.shopService.update(+id, updateShopDto);
+  // }
+  // @Delete(':id')
+  // remove(@Param('id') id: string) {
+  //   return this.shopService.remove(+id);
+  // }
 }
