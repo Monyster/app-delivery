@@ -17,6 +17,23 @@ const HistoryOrderList = ({ orderHistory = [] }) => {
             <div>{i}</div>
             <div>Date: {new Date(order.orderDate).toUTCString()}</div>
             <div>Address: {order.deliveryAddress}</div>
+            <div>Shop: {order.shopId.name}</div>
+            <section>
+              {order.orderedProducts.map((product, i) => (
+                <div>
+                  <p>
+                    Product {i}: {product.productId.name}
+                  </p>
+                  <p>Amount: {product.amount}</p>
+                </div>
+              ))}
+            </section>
+            <div>
+              Total price:{" "}
+              {order.orderedProducts.reduce((accum, product) => {
+                return accum + product.amount * product.productId.price;
+              }, 0)}
+            </div>
           </section>
         ))}
       </OrderList>

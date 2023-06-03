@@ -25,10 +25,25 @@ export const OrderList = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
+    row-gap: 10px;
 
     padding: 15px 20px;
 
     background-color: #202020;
     border-radius: 10px;
+
+    section {
+      display: flex;
+      flex-direction: column;
+      div {
+        display: flex;
+        gap: 30px;
+      }
+    }
+
+    section > *:not(:last-child) {
+      padding: 0 0 10px 0;
+      border-bottom: 1px solid #fff;
+    }
   }
 `;

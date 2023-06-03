@@ -4,7 +4,6 @@ import { Model } from 'mongoose';
 import { Customer, CustomerDocument } from './schemas/customer.schema';
 import { InjectModel } from '@nestjs/mongoose';
 import { UpdateCustomerDto } from './dto/update-customer.dto';
-import { GetCustomerDto } from './dto/get-customer.dto';
 
 @Injectable()
 export class CustomerService {
@@ -22,14 +21,28 @@ export class CustomerService {
   }
 
   async findOne(email: string, phone: string): Promise<Customer> {
-    console.log(email);
-    console.log(phone);
     const customer = await this.customerModel
       .findOne({
         email,
         phone: `+${phone}`,
       })
-      .populate('orders');
+      .populate('orders')
+      .populate({
+        path: 'orders',
+        populate: {
+          path: 'shopId',
+        },
+      })
+      .populate({
+        path: 'orders',
+        populate: {
+          path: 'orderedProducts',
+          populate: {
+            path: 'productId',
+          },
+        },
+      })
+      .exec();
     return customer;
   }
 

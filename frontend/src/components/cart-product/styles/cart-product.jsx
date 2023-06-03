@@ -27,6 +27,12 @@ export const Product = styled.div`
     color: var(--secondary-text);
   }
 
+  div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
   button {
     padding: 12px 25px;
     text-align: center;
@@ -38,5 +44,10 @@ export const Product = styled.div`
     background-color: var(--header);
 
     border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 5px;
   }
 `;

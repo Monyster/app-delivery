@@ -26,6 +26,13 @@ const Cart = () => {
       navigate("/");
       return;
     }
+  }, [cart, cartShop]);
+
+  React.useEffect(() => {
+    if (cartShop == null) {
+      navigate("/");
+      return;
+    }
 
     try {
       fetch(`${configData.SERVER_URL}/shop/${cartShop}`)
