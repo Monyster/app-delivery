@@ -1,0 +1,41 @@
+@import "./reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@300;400;500&family=Source+Sans+Pro:wght@400;600;700&display=swap");
+
+:root {
+  --background: #18191a;
+  --header: #242526;
+
+  --hover: #3a3b3c;
+
+  --primary-text: #e4e6eb;
+  --secondary-text: #b0b3b8;
+}
+
+html,
+body,
+#root {
+  font-family: "Source Sans Pro", sans-serif;
+
+  color: var(--primary-text);
+  background-color: var(--background);
+
+  height: 100%;
+  width: 100%;
+}
+
+/* ----- SCROLLBAR ----- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #555;
+}

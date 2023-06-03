@@ -35,6 +35,7 @@ export class ShopService {
     await shop.save();
     return product;
   }
+
   // update(id: number, updateShopDto: UpdateShopDto) {
   //   return `This action updates a #${id} shop`;
   // }

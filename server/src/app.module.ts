@@ -4,8 +4,10 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import configuration from './config/configuration';
 
 import { MongooseModule } from '@nestjs/mongoose';
-import { ProductModule } from './product/product.module';
-import { ShopModule } from './shop/shop.module';
+import { OrderModule } from './order/order.module';
+import { CustomerModule } from './customer/customer.module';
+
+import ShopModule from './shop/shop.module';
 
 @Module({
   imports: [
@@ -28,8 +30,9 @@ import { ShopModule } from './shop/shop.module';
       }),
       inject: [ConfigService],
     }),
-    ProductModule,
     ShopModule,
+    OrderModule,
+    CustomerModule,
   ],
 })
 export class AppModule {}
