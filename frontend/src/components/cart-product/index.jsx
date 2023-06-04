@@ -1,8 +1,6 @@
 import React from "react";
 import { Product } from "./styles/cart-product";
 
-import configData from "./../../config/configuration.json";
-
 const CartProduct = ({ product, remove, changeAmount }) => {
   const [amount, setAmount] = React.useState(product.amount);
 
