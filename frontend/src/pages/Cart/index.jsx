@@ -98,7 +98,7 @@ const Cart = () => {
       .then((data) => {
         setCart([]);
         setCartShop(null);
-        navigate("/successful");
+        navigate(`/${configData.GH_PAGES_PREFIX}/successful`);
       })
       .catch();
   };

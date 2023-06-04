@@ -4,6 +4,8 @@ import { NavLink } from "react-router-dom";
 import { HeaderContainer, Nav } from "./styles/header";
 import { CartLocalStorageContext } from "../../App";
 
+import configData from "./../../config/configuration.json";
+
 const Header = () => {
   const { cartShop } = useContext(CartLocalStorageContext);
 
@@ -13,7 +15,7 @@ const Header = () => {
         <ul>
           <li>
             <NavLink
-              to="/"
+              to={`/${configData.GH_PAGES_PREFIX}/`}
               className={({ isActive }) => (isActive ? "link-active" : "")}
             >
               Home
@@ -21,7 +23,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to="/history"
+              to={`/${configData.GH_PAGES_PREFIX}/history`}
               className={({ isActive }) => (isActive ? "link-active" : "")}
             >
               History
@@ -30,7 +32,7 @@ const Header = () => {
           {cartShop ? (
             <li>
               <NavLink
-                to="/cart"
+                to={`/${configData.GH_PAGES_PREFIX}/cart`}
                 className={({ isActive }) => (isActive ? "link-active" : "")}
               >
                 Cart

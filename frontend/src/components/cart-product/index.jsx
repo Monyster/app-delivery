@@ -1,12 +1,17 @@
 import React from "react";
 import { Product } from "./styles/cart-product";
 
+import configData from "./../../config/configuration.json";
+
 const CartProduct = ({ product, remove, changeAmount }) => {
   const [amount, setAmount] = React.useState(product.amount);
 
   return (
     <Product key={product._id}>
-      <img src="images.jfif" alt={product.name} />
+      <img
+        src={`./${configData.GH_PAGES_PREFIX}/images.jfif`}
+        alt={product.name}
+      />
       <h4>{product.name}</h4>
       <p>{product.description}</p>
       <p>{product.price} UAH</p>

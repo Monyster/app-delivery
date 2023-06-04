@@ -8,6 +8,8 @@ import useLocalStorage from "./hooks/useLocalStorage";
 import Successful from "./pages/Successful";
 import History from "./pages/History";
 
+import configData from "./config/configuration.json";
+
 function App() {
   return (
     <CartLocalStorageProvider>
@@ -15,10 +17,22 @@ function App() {
         <Header />
         <MainContainer>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/history" element={<History />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/successful" element={<Successful />} />
+            <Route
+              path={`/${configData.GH_PAGES_PREFIX}/`}
+              element={<Home />}
+            />
+            <Route
+              path={`/${configData.GH_PAGES_PREFIX}/history`}
+              element={<History />}
+            />
+            <Route
+              path={`/${configData.GH_PAGES_PREFIX}/cart`}
+              element={<Cart />}
+            />
+            <Route
+              path={`/${configData.GH_PAGES_PREFIX}/successful`}
+              element={<Successful />}
+            />
           </Routes>
         </MainContainer>
       </AppContainer>
