@@ -12,6 +12,7 @@ Nest.js provides performing tasks such as order processing, delivery coordinatio
 The frontend and backend delivery applications communicate with each other through API. The frontend sends requests to the backend, for example, to place an order or get a delivery status, and the backend responds with the required data or performs the necessary actions.
 
 Backend running on AWS EC2 instance: https://3.228.71.220:5000
+
 Frontend on github pages: https://Monyster.github.io/app-delivery
 
 The backend provides an API for:
