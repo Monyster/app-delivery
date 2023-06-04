@@ -40,10 +40,7 @@ const ShopProducts = ({ addToCart, removeFromCart, cart = [], shop }) => {
       <ShopProductsList>
         {products.map((product) => (
           <ShopProductCard key={product._id}>
-            <img
-              src={`./${configData.GH_PAGES_PREFIX}/images.jfif`}
-              alt={product.name}
-            />
+            <img src="./images.jfif" alt={product.name} />
             <h4>{product.name}</h4>
             <p>{product.description}</p>
             <p>{product.price} UAH</p>
