@@ -15,6 +15,8 @@ Backend running on AWS EC2 instance: https://3.228.71.220:5000
 
 Frontend on github pages: https://Monyster.github.io/app-delivery
 
+MongoDB database is used to store customers, orders and stores
+
 The backend provides an API for:
 
 - Customer
