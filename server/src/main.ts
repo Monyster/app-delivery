@@ -4,14 +4,7 @@ import { ConfigService } from '@nestjs/config';
 import * as fs from 'fs';
 
 async function bootstrap() {
-  const httpsOptions = {
-    key: fs.readFileSync('./src/secrets/key.pem'),
-    cert: fs.readFileSync('./src/secrets/cert.pem'),
-  };
-
-  const app = await NestFactory.create(AppModule, {
-    httpsOptions,
-  });
+  const app = await NestFactory.create(AppModule);
 
   app.enableCors();
 

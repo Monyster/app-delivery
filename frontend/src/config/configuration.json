@@ -1,4 +1,4 @@
 {
-  "SERVER_URL": "https://3.228.71.220:5000",
-  "GH_PAGES_PREFIX": "app-delivery"
+  "SERVER_URL": "http://3.228.71.220:5000",
+  "GH_PAGES_PREFIX": ""
 }
