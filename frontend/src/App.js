@@ -18,19 +18,19 @@ function App() {
         <MainContainer>
           <Routes>
             <Route
-              path={`/${configData.GH_PAGES_PREFIX}/`}
+              path={`/`}
               element={<Home />}
             />
             <Route
-              path={`/${configData.GH_PAGES_PREFIX}/history`}
+              path={`/history`}
               element={<History />}
             />
             <Route
-              path={`/${configData.GH_PAGES_PREFIX}/cart`}
+              path={`/cart`}
               element={<Cart />}
             />
             <Route
-              path={`/${configData.GH_PAGES_PREFIX}/successful`}
+              path={`/successful`}
               element={<Successful />}
             />
           </Routes>

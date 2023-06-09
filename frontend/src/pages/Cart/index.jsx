@@ -23,14 +23,14 @@ const Cart = () => {
 
   React.useEffect(() => {
     if (cartShop == null) {
-      navigate(`/${configData.GH_PAGES_PREFIX}/`);
+      navigate(`/`);
       return;
     }
   }, [cart, cartShop]);
 
   React.useEffect(() => {
     if (cartShop == null) {
-      navigate(`/${configData.GH_PAGES_PREFIX}/`);
+      navigate(`/`);
       return;
     }
 
@@ -98,7 +98,7 @@ const Cart = () => {
       .then((data) => {
         setCart([]);
         setCartShop(null);
-        navigate(`/${configData.GH_PAGES_PREFIX}/successful`);
+        navigate(`/successful`);
       })
       .catch();
   };

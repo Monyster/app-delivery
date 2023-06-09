@@ -15,7 +15,7 @@ const Header = () => {
         <ul>
           <li>
             <NavLink
-              to={`/${configData.GH_PAGES_PREFIX}/`}
+              to={`/`}
               className={({ isActive }) => (isActive ? "link-active" : "")}
             >
               Home
@@ -23,7 +23,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to={`/${configData.GH_PAGES_PREFIX}/history`}
+              to={`/history`}
               className={({ isActive }) => (isActive ? "link-active" : "")}
             >
               History
@@ -32,7 +32,7 @@ const Header = () => {
           {cartShop ? (
             <li>
               <NavLink
-                to={`/${configData.GH_PAGES_PREFIX}/cart`}
+                to={`/cart`}
                 className={({ isActive }) => (isActive ? "link-active" : "")}
               >
                 Cart
